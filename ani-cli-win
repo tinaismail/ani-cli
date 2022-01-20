@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# dependencies: grep sed curl -4 video_player
+# dependencies: grep sed curl jq -4 video_player
 # video_player ( needs to be able to play urls )
 player_fn="vlc"
 
@@ -274,7 +274,7 @@ open_episode () {
 # to clear the colors when exited using SIGINT
 trap "printf '$c_reset'" INT HUP
 
-dep_ch "$player_fn" "curl" "sed" "grep"
+dep_ch "$player_fn" "curl" "sed" "grep" "jq"
 
 # option parsing
 is_download=0
